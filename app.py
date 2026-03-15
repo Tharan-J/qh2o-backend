@@ -4,7 +4,13 @@ app = Flask(__name__)
 
 devices = {}
 
-
+@app.route("/health", methods=["GET"])
+def health():
+    return{
+        "status":"ok",
+        "service": "qh20-backend",
+        "message": "server running"
+    }, 200
 # -----------------------------
 # Upload endpoint (device -> cloud)
 # -----------------------------
